@@ -1,2 +1,32 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿//     Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.  
+//     645 -> 5  
+//     78 -> третьей цифры нет  
+//     32679 -> 6
+
+// По просьбе Манусра Шафигуллина прирешении задачи не использовать массивы и преобразование числа в тип string. Работать только с типом int.
+
+// ---------------- START ----------------
+
+Console.Clear();
+Console.WriteLine("Введите число: ");
+int value = int.Parse(Console.ReadLine());
+
+if (value < 100 && value > -100)
+{
+    Console.WriteLine("Третьей цифры нет!");
+}
+else
+{
+    if (value < 0) value = value * -1;
+    if (value >= 1000)
+    {
+        while (value >= 1000)
+        {
+            value = value / 10;
+        }
+    }
+    Console.WriteLine(value % 10);
+}
+
+
+// ---------------- END ----------------
