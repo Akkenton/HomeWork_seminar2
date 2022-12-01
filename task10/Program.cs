@@ -1,2 +1,24 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Напишите программу, которая принимает на вход трёхзначное число 
+// и на выходе показывает вторую цифру этого числа.  
+//     456 -> 5  
+//     782 -> 8  
+//     918 -> 1
+
+// ---------------- START ----------------
+
+Console.Clear();
+link1: Console.WriteLine("Введите трёхзначное число: ");
+int value = int.Parse(Console.ReadLine());
+
+if ((value < 100 && value > -100) || value >= 1000 || value <= -1000) // обработка ввода неверных данных
+{
+    Console.WriteLine("Вы ввели не трёхзначное число. Повторите ввод!");
+    goto link1;
+}
+
+if (value < 0) value = value * -1; // здесь если value отрицательное, переводим его в положительное число
+value = value / 10;
+Console.WriteLine(value % 10);
+
+
+// ---------------- END ----------------
